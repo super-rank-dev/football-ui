@@ -1,3 +1,4 @@
+import 'package:football_ui/mock/data.dart';
 import 'package:football_ui/styles/colors.dart';
 import 'package:football_ui/styles/text_style.dart';
 import 'package:flutter/material.dart';
@@ -19,12 +20,12 @@ class ScoreBoard extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    '58',
+                    '${PlayerData.score}',
                     style: AppTextStyle.headingText1
                         .copyWith(fontWeight: FontWeight.bold),
                   ),
                   const Text(
-                    'LW',
+                    PlayerData.position,
                     style: AppTextStyle.bodyText,
                   )
                 ],

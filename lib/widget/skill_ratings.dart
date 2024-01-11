@@ -1,3 +1,4 @@
+import 'package:football_ui/mock/data.dart';
 import 'package:football_ui/styles/colors.dart';
 import 'package:football_ui/styles/text_style.dart';
 import 'package:football_ui/widget/leader_board.dart';
@@ -12,13 +13,14 @@ class SkillRatings extends StatelessWidget {
   });
 
   final SizedBox gap;
+
   final data = [
-    'Speed',
-    'Agility',
-    'Dribbling',
-    'Ball Handling',
-    'Stamina',
-    'Coordination',
+    ['Speed', PlayerData.speed, Icons.speed],
+    ['Agility', PlayerData.agility, Icons.control_camera],
+    ['Dribbling', PlayerData.dribbling, Icons.sports_soccer],
+    ['Ball Handling', PlayerData.ballHandling, Icons.directions_run],
+    ['Stamina', PlayerData.stamina, Icons.ev_station],
+    ['Coordination', PlayerData.coordination, Icons.group_work],
   ];
 
   @override
@@ -50,14 +52,14 @@ class SkillRatings extends StatelessWidget {
             ),
             itemBuilder: (context, index) => Row(
               children: [
-                const Column(
+                Column(
                   children: [
                     Icon(
-                      Icons.alarm_on,
+                      data[index][2] as IconData,
                       color: textColor,
                     ),
                     Text(
-                      '47',
+                      data[index][1].toString(),
                       style: AppTextStyle.defaultText,
                     ),
                   ],
@@ -68,7 +70,7 @@ class SkillRatings extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      data[index],
+                      data[index][0].toString(),
                       style: AppTextStyle.defaultText,
                     ),
                     const SizedBox(height: 8),
@@ -80,7 +82,7 @@ class SkillRatings extends StatelessWidget {
                           trackShape: CustomTrackShape(),
                           thumbShape: SliderComponentShape.noThumb,
                         ),
-                        child: SkillProgressBar(),
+                        child: SkillProgressBar(data[index][1] as int),
                       ),
                     ),
                   ],
@@ -97,8 +99,8 @@ class SkillRatings extends StatelessWidget {
           const Row(
             children: [
               Text('Leaderboard', style: AppTextStyle.headingText3),
-              const Spacer(),
-              const _SeeMore(),
+              Spacer(),
+              _SeeMore(),
             ],
           ),
           const LeaderBoard(),

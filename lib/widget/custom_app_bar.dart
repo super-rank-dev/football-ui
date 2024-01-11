@@ -1,5 +1,6 @@
 import 'package:football_ui/styles/colors.dart';
 import 'package:football_ui/styles/text_style.dart';
+import 'package:football_ui/mock/data.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -16,7 +17,7 @@ class CustomAppBar extends StatelessWidget {
       child: Row(
         children: [
           Text(
-            "John Ronaldo",
+            PlayerData.name,
             style: AppTextStyle.headingText3,
           ),
           Spacer(),

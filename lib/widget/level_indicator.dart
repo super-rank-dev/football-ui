@@ -1,3 +1,4 @@
+import 'package:football_ui/mock/data.dart';
 import 'package:football_ui/styles/colors.dart';
 import 'package:football_ui/styles/text_style.dart';
 import 'package:football_ui/widget/slider_track_shape.dart';
@@ -29,13 +30,13 @@ class LevelIndicator extends StatelessWidget {
                   ),
                   RichText(
                     text: TextSpan(
-                      text: ' 11,200',
+                      text: ' ${PlayerData.currentExp}',
                       style: AppTextStyle.headingText4.copyWith(
                         fontWeight: FontWeight.w600,
                       ),
                       children: const [
                         TextSpan(
-                          text: ' of 15,000',
+                          text: ' of ${PlayerData.totalExp}',
                           style: AppTextStyle.bodyText3,
                         ),
                       ],
@@ -51,9 +52,9 @@ class LevelIndicator extends StatelessWidget {
               thumbShape: SliderComponentShape.noThumb,
             ),
             child: Slider(
-              value: 7,
+              value: PlayerData.currentExp.toDouble(),
               onChanged: (_) {},
-              max: 10,
+              max: PlayerData.totalExp.toDouble(),
               min: 0,
               activeColor: Colors.green,
               inactiveColor: Colors.grey,

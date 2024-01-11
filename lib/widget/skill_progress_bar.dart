@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class SkillProgressBar extends StatelessWidget {
+  final int skillRating;
+
+  SkillProgressBar(this.skillRating);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -12,10 +16,10 @@ class SkillProgressBar extends StatelessWidget {
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(50), // Set border radius to 50%
-          child: const LinearProgressIndicator(
-            value: 0.75, // 75%
+          child: LinearProgressIndicator(
+            value: skillRating / 100, // 75%
             backgroundColor: Colors.transparent,
-            valueColor: AlwaysStoppedAnimation<Color>(
+            valueColor: const AlwaysStoppedAnimation<Color>(
               Color(0xFF1A5D4B), // RGB(26, 93, 75)
             ),
           ),
