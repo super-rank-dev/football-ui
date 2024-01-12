@@ -2,6 +2,7 @@ import 'package:football_ui/styles/colors.dart';
 import 'package:football_ui/styles/text_style.dart';
 import 'package:flutter/material.dart';
 
+/// A Flutter widget representing a Leaderboard.
 class LeaderBoard extends StatelessWidget {
   const LeaderBoard({super.key});
 
@@ -17,11 +18,13 @@ class LeaderBoard extends StatelessWidget {
   }
 }
 
+/// A Flutter widget representing an item in the Leaderboard.
 class _LeaderBoardItem extends StatelessWidget {
   const _LeaderBoardItem();
 
   @override
   Widget build(BuildContext context) {
+    // Extracting the white color from the AppColors class
     const white = AppColors.textColor;
 
     return const Card(

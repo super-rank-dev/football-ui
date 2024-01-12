@@ -1,13 +1,17 @@
 import 'package:football_ui/styles/colors.dart';
 import 'package:flutter/material.dart';
 
+/// A custom bottom navigation bar widget for the football app.
 class AppBottomNavBar extends StatelessWidget {
-  const AppBottomNavBar({super.key});
+  /// Constructor for the [AppBottomNavBar] widget.
+  const AppBottomNavBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // Define the text color using the AppColors class.
     const textColor = AppColors.textColor;
 
+    // Return a BottomNavigationBar widget with specified customization.
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
       selectedItemColor: textColor,

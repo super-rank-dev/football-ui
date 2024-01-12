@@ -1,14 +1,38 @@
+/// A class representing player data in a sports game.
 class PlayerData {
-  static const name = 'John Ronaldo';
-  static const score = 58;
-  static const position = 'LW';
-  static const level = 7;
-  static const currentExp = 11200;
-  static const totalExp = 15000;
-  static const speed = 47;
-  static const agility = 61;
-  static const dribbling = 58;
-  static const ballHandling = 61;
-  static const stamina = 60;
-  static const coordination = 59;
+  /// The name of the player.
+  static const String name = 'John Ronaldo';
+
+  /// The player's current score.
+  static const int score = 58;
+
+  /// The player's position on the field.
+  static const String position = 'LW'; // LW stands for Left Wing.
+
+  /// The player's current level.
+  static const int level = 7;
+
+  /// The player's current experience points.
+  static const int currentExp = 11200;
+
+  /// The total experience points required to reach the next level.
+  static const int totalExp = 15000;
+
+  /// The player's speed attribute.
+  static const int speed = 47;
+
+  /// The player's agility attribute.
+  static const int agility = 61;
+
+  /// The player's dribbling skill.
+  static const int dribbling = 58;
+
+  /// The player's ball handling skill.
+  static const int ballHandling = 61;
+
+  /// The player's stamina level.
+  static const int stamina = 60;
+
+  /// The player's coordination attribute.
+  static const int coordination = 59;
 }

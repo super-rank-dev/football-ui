@@ -1,19 +1,22 @@
+import 'package:flutter/material.dart';
 import 'package:football_ui/mock/data.dart';
 import 'package:football_ui/styles/colors.dart';
 import 'package:football_ui/styles/text_style.dart';
 import 'package:football_ui/widget/leader_board.dart';
 import 'package:football_ui/widget/skill_progress_bar.dart';
 import 'package:football_ui/widget/slider_track_shape.dart';
-import 'package:flutter/material.dart';
 
 class SkillRatings extends StatelessWidget {
+  // Constructor for SkillRatings widget
   SkillRatings({
     super.key,
     required this.gap,
   });
 
+  // Gap between UI elements
   final SizedBox gap;
 
+  // Data for skill ratings including name, value, and corresponding icon
   final data = [
     ['Speed', PlayerData.speed, Icons.speed],
     ['Agility', PlayerData.agility, Icons.control_camera],
@@ -25,12 +28,15 @@ class SkillRatings extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Text color for the UI elements
     const textColor = AppColors.textColor;
 
+    // Main widget structure
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         children: [
+          // Skill Ratings heading row
           const Row(
             children: [
               Text(
@@ -41,7 +47,9 @@ class SkillRatings extends StatelessWidget {
               _SeeMore(),
             ],
           ),
-          gap,
+          gap, // Add the specified gap
+
+          // GridView for displaying skill ratings
           GridView.builder(
             shrinkWrap: true,
             padding: EdgeInsets.zero,
@@ -52,6 +60,7 @@ class SkillRatings extends StatelessWidget {
             ),
             itemBuilder: (context, index) => Row(
               children: [
+                // Icon and value column
                 Column(
                   children: [
                     Icon(
@@ -65,6 +74,7 @@ class SkillRatings extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(width: 4),
+                // Skill name and progress bar column
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -91,11 +101,15 @@ class SkillRatings extends StatelessWidget {
             ),
             itemCount: data.length,
           ),
-          gap,
+          gap, // Add the specified gap
+
+          // Divider
           const Divider(
             color: Colors.grey,
           ),
           const SizedBox(height: 24),
+
+          // Leaderboard heading row
           const Row(
             children: [
               Text('Leaderboard', style: AppTextStyle.headingText3),
@@ -103,13 +117,14 @@ class SkillRatings extends StatelessWidget {
               _SeeMore(),
             ],
           ),
-          const LeaderBoard(),
+          const LeaderBoard(), // Leaderboard widget
         ],
       ),
     );
   }
 }
 
+// See More text with arrow icon widget
 class _SeeMore extends StatelessWidget {
   const _SeeMore();
 
